@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'pineapple';
+  src: url('../fonts/pineapple.eot');
+  src: url('../fonts/pineapple.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/pineapple.woff') format('woff'),
+       url('../fonts/pineapple.ttf') format('truetype'),
+       url('../fonts/pineapple.svg#pineapple') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class*='ic-']:before{
+display: inline-block;
+ font-family: 'pineapple';
+ font-style: normal;
+ font-weight: normal;
+ line-height: 1;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale
+}
+.ic-checkmark:before{content:'\0041';}
+.ic-arrow:before{content:'\0042';}
+.ic-facebook:before{content:'\0043';}
+.ic-instagram:before{content:'\0044';}
+.ic-pineapple:before{content:'\0046';}
+.ic-success:before{content:'\0047';}
+.ic-twitter:before{content:'\0048';}
+.ic-youtube:before{content:'\0049';}
+.ic-logo:before{content:'\004a';}

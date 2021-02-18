@@ -1,0 +1,83 @@
+.socials {
+  position: relative;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-right: 14px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: $light-gray;
+    top: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 50px;
+    padding-right: 0;
+  }
+}
+
+.socials__link {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid $light-gray;
+  border-radius: 50%;
+  margin: 0 5px;
+  color: rgba(19,24,33,0.4);
+  font-size: 16px;
+  transition: 0.2s ease-in;
+  box-sizing: border-box;
+
+  &:hover, &:active, &:focus {
+    outline: none;
+    color: $white;
+    box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+  }
+
+  &.ic-facebook {
+    &:hover, &:focus  {
+      background-color: #4267B2;
+    }
+    &:active {
+      background-color: #2F4A80;
+    }
+  }
+
+  &.ic-instagram {
+    &:hover, &:focus  {
+      background-color: #C13584;
+    }
+    &:active {
+      background-color: #8F2762;
+    }
+  }
+
+  &.ic-twitter {
+    &:hover, &:focus  {
+      background-color: #1DA1F2;
+    }
+    &:active {
+      background-color: #177FBF;
+    }
+  }
+  
+  &.ic-youtube {
+    &:hover, &:focus  {
+      background-color: #FF0000;
+    }
+    &:active {
+      background-color: #CC0000;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0 10px;
+  }
+}

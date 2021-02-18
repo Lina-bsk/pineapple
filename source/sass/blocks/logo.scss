@@ -1,0 +1,23 @@
+.logo {
+  width: 38px;
+  height: 45px;
+  position: relative;
+  display: flex;
+  color: $blue;
+  font-size: 39px;
+
+  @media (min-width: $desktop-width) {
+    width: 126px;
+    height: 40px;
+
+    &::after {
+      content: "\0046";
+      font-family: 'pineapple';
+      position: absolute;
+      right: 0;
+      color: $black;
+      font-size: 80px;
+      bottom: 0;
+    }
+  }
+}

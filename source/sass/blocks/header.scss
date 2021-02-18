@@ -1,0 +1,17 @@
+.header {
+  padding: 0 10px 0 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $white;
+  box-sizing: border-box; 
+  height: 66px;
+
+  @media (min-width: $desktop-width) {
+    width: 60%;
+    height: 140px;
+    align-items:flex-end;
+    max-width: 680px;
+    padding: 100px 86px 0 92px;
+  }
+}

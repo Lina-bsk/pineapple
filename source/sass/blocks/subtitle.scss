@@ -1,0 +1,11 @@
+.subtitle {
+  line-height: 26px;
+  margin-bottom: 20px;
+  margin-top: 0;
+
+  @media (min-width: $desktop-width) {
+    font-size: 16px;
+    line-height: 28px;
+    margin-bottom: 50px;
+  }
+}

@@ -1,0 +1,15 @@
+.main {
+  flex-grow: 1;
+  width: 100%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: $desktop-width) {
+    width: 60%;
+    max-width: 680px;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F2F5FA 100%);
+    margin-top: -1px;
+  }
+}

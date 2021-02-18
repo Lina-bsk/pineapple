@@ -1,0 +1,169 @@
+.form__feedback {
+  margin-bottom: 20px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 52px;
+  }
+}
+
+.form__input-wrap {
+  position: relative;
+}
+
+.form__label {
+  width: 100%;
+  display: block;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    background-color: $blue;
+  }
+}
+
+.form__input {
+  width: 100%;
+  font-size: 16px;
+  line-height: 24px;
+  border: 1px solid $light-gray;
+  padding: 18px 49px 18px 19px;
+  box-sizing: border-box;
+
+  &:hover {
+    box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
+  }
+
+  &:focus {
+    box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
+    border-color: $blue;
+    outline: none;
+
+    &+.form__submit {
+      color: $blue;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 22px 10px 20px 44px;
+    border-right: none;
+  }
+}
+
+.form__submit {
+  position: absolute;
+  border: none;
+  background-color: transparent;
+  padding: 0 20px;
+  font-size: 25px;
+  text-align: start;
+  line-height: 0;
+  color: $typography;
+  top: 50%;
+  right: 0;
+  height: 100%;
+  transform: translateY(-50%);
+
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus {
+    outline: none;
+    color: $blue;
+  }
+
+  @media (min-width: $desktop-width) {
+    background-color: $white;
+    width: 84px;
+    right: -82px;
+    border: 1px solid $light-gray;
+    border-left: none; 
+  }
+}
+
+.form__agreement {
+  padding-left: 40px;
+  position: relative;
+  line-height: 28px;
+  font-size: 16px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border: 1px solid $light-gray;
+    border-radius: 3px;
+    box-sizing: border-box;
+    left: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    &+.form__invalid-feedback {
+      margin-left: 40px;
+    }
+  }
+}
+
+.form__agreement-link {
+  text-decoration: underline;
+  color: $black;
+  transition: 1s linear;
+
+  &:hover {
+    color: $blue;
+  }
+
+  &:active {
+    color: $dark;
+  }
+}
+
+.form__checkbox:checked + .form__agreement {
+  &::after {
+    background-color: $blue;
+    border-color: $blue;
+    transition: 0.2s ease-in;
+  }
+
+  &::before {
+    content: '\0041';
+    font-family: 'pineapple';
+    position: absolute;
+    color: $white;
+    left: 5px;
+    z-index: 10;
+  }
+}
+
+.form__invalid-feedback {
+  color: $error;
+  animation: effect 0.4s, fadein 1s;
+}
+
+@keyframes effect { 
+  20%,
+  60%,
+  90%
+  {
+    transform: translateX(-10px);
+  }
+
+  10%,
+  40%,
+  80%
+  {
+    transform: translateX(10px);
+  }    
+} 
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+}
