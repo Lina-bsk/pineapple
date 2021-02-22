@@ -4,7 +4,7 @@
   "description": "test",
   "main": "index.html",
   "scripts": {
-    "start": "gulp build && gulp server",
+    "start": "gulp build",
     "build": "gulp build"
   },
   "repository": {

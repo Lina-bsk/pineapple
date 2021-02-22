@@ -29,8 +29,8 @@ gulp.task("copy", function () {
   return gulp.src([
     "source/fonts/**/*.{woff,woff2,svg,ttf,eot}",
     "source/img/**",
-    "source/*.html",
-    "source/*.php"
+    "source/*.php",
+    "source/php/**"
     ], {
       base: "source"
     })
@@ -90,4 +90,4 @@ gulp.task("refresh", function (done) {
 });
 
 gulp.task("build", gulp.series("clean", "copy", "css", "js"));
-gulp.task("start", gulp.series("build", "server"));
+gulp.task("start", gulp.series("build"));

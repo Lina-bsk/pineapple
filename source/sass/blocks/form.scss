@@ -140,6 +140,9 @@
 
 .form__invalid-feedback {
   color: $error;
+}
+
+.form__invalid-feedback--shake {
   animation: effect 0.4s, fadein 1s;
 }
 

@@ -39,22 +39,13 @@ function validateEmail(el) {
   return !(regExpDic[regExpName].test(el.value)) ? showError(el, textError.invalidEmail) : regExpDic.emailEnd.test(el.value) ? showError(el, textError.invalidEmailEnding) : true;
 }
 
-// template for error message 
-function inputErrorTemplate(msg = 'This field is required') {  
-  const div = document.createElement('div');
-  div.classList.add('form__invalid-feedback');
-  div.textContent = msg;
-
-  return div;
-}
-
-function showError(el ,msg) {
+// show Error
+function showError(el ,msg = 'This field is required') {
   removeInputError(el);
-
   const parent = el.closest('.form__feedback'); 
-  const template = inputErrorTemplate(msg); 
-  el.classList.add('form__error');
-  parent.append(template);             
+  const errorBlock = parent.querySelector('.form__invalid-feedback');
+  errorBlock.classList.add('form__invalid-feedback--shake');
+  errorBlock.textContent = msg;             
 }
 
 //remove Error 
@@ -63,9 +54,7 @@ function removeInputError(el) {
   const err = parent.querySelector('.form__invalid-feedback');
 
   if (!err) return;
-
-  el.classList.remove('.form__error');
-  parent.removeChild(err);
+  err.textContent = "";
 }
 
 //Handlers
@@ -74,7 +63,6 @@ function onSubmit() {
     const isValidInput = validate(el);
     if (isValidInput){
       removeInputError(el);
-      // form.submit();  /// отправка формы 
     }
     return isValidInput;
   });
@@ -89,7 +77,7 @@ form.addEventListener('submit', (evt) => {
   const submit = onSubmit();
   
   if(submit) {
-    showSubmit();
+    submitForm();
     form.reset();         
   }
 });
@@ -105,4 +93,26 @@ function showSubmit() {
   title.innerHTML = 'Thanks for subscribing!';
   subtitle.innerHTML = 'You have successfully subscribed to our email listing. Check your email for the discount code.';
   conteiner.classList.add('content--subscrib');
+}
+
+// request 
+function submitForm() {
+  const request = new XMLHttpRequest();
+  const url = './php/form.php';
+  const params = new FormData(form);
+
+  request.open("POST", url, true);
+
+request.onreadystatechange = function() {
+   if (request.readyState == 4) {
+      if (request.status == 200) {
+        console.log(request.responseText);
+        showSubmit();
+      } else {
+        console.log('error');
+      }
+    }     
+};
+
+request.send(params);
 }

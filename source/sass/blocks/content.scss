@@ -3,6 +3,7 @@
   margin: auto 20px;
   box-sizing: border-box;
   background: linear-gradient(180deg, #FFFFFF 0%, #F2F5FA 100%);
+  position: relative;
 
   @media (min-width: $desktop-width) {
     margin: 0 0 0 100px;
@@ -15,6 +16,28 @@
       margin-left: auto;
       margin-left: 40px;
       margin-right: 140px;
+    }
+  }
+
+  &--subscrib {
+    padding-top: 140px;
+
+    &::before {
+      content:'\0047';
+      font-family: 'pineapple';
+      font-size: 70px;
+      position: absolute;
+      top: 55px;
+      left: 6px;
+      color: $blue;
+
+      @media (min-width: $desktop-width) {
+        left: 28px;
+      }
+    }
+
+    .subtitle {
+      margin-bottom: 40px;
     }
   }
 }

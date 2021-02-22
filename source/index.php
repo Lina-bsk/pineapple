@@ -1,3 +1,7 @@
+<?php
+  require ('php/form.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,7 +22,7 @@
       </nav>
     </header>
     <main class="main">
-      <section class="content">
+      <section class="content"> 
         <h1 class="title content__container">Subscribe to newsletter</h1>
         <p class="subtitle content__container">
           Subscribe to our newsletter and get 10% discount on pineapple glasses.
@@ -28,20 +32,22 @@
             <div class="form__input-wrap">
               <label class="form__label"><span class="visually-hidden">type you email address</span>
                 <input type="email" name="mail" placeholder="Type your email address here…"
-                  class="form__input" data-required="email" required/>
+                  class="form__input" data-required="email" value="<?=$value_email?>" />
               </label>
-              <button class="ic-arrow form__submit" type="submit">
+              <button class="ic-arrow form__submit" type="submit" name="submit">
                 <span class="visually-hidden">submit</span>
               </button>
             </div>
+            <div class="form__invalid-feedback"><?=$error_email?></div>
           </div>
           <div class="form__feedback">
-            <input name="agreement" id="agreement" type="checkbox"
-              class="form__checkbox visually-hidden" data-required="checkbox" required/>
-            <label for="agreement" class="form__agreement content__container">
+            <input name="agreement" id="agre" type="checkbox"
+              class="form__checkbox visually-hidden" data-required="checkbox" />
+            <label for="agre" class="form__agreement content__container">
               I agree to
               <a href="#" class="form__agreement-link">terms of service</a>
             </label>
+            <div class="form__invalid-feedback"><?=$error_checkbox?></div>
           </div>
         </form>
         <section class="socials content__container">
