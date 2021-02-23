@@ -28,10 +28,11 @@ if (($_SERVER["REQUEST_METHOD"] == "POST") || (isset($_POST["submit"]))) {
     $error_email = "Email address is required";
     $valid_email = true;
   } elseif (!(preg_match($reg_ex, $email))) {
-    $error_email = "проыерка regex";
+    $error_email = "Please provide a valid e-mail address";
     $valid_email = true;
   } elseif ((preg_match($reg_ex_co, $email))) {
-    $error_email = "проыерка на co";
+    $error_email = "We are not accepting subscriptions from Colombia
+    emails";
     $valid_email = true;
   } 
   else {
@@ -39,7 +40,7 @@ if (($_SERVER["REQUEST_METHOD"] == "POST") || (isset($_POST["submit"]))) {
   }
 
   if (!$checkbox) {
-    $error_checkbox = "не установлено";
+    $error_checkbox = "You must accept the terms and conditions";
     $valid_checkbox = true;
   } else {
     $checkbox = 1;
